@@ -1,0 +1,63 @@
+var nama = prompt("Siapa nama kamu?")
+const pertanyaan = document.getElementById("pertanyaan")
+const jawaban = document.getElementById("jawaban")
+const loaders = document.getElementById("loaders")
+const container = document.getElementsByClassName("container")
+let init = 0
+
+const botSay = (init) => {
+      return ["Halo, Siapa nama kamu?",
+        'Wah, kamu beneran Dewi?',
+          'Wah beneran ternyata, kalo begitu boleh gk aku ngomong sesuatu?',
+            'sebenernya aku mau ngomong kalau kamu itu jangan malu - malu terus :v , bisa gak? pliss bisa...',
+                ]
+                }
+
+                pertanyaan.innerHTML = botSay()[0]
+
+                function botStart() {
+                      if (jawaban.value.length < 1) return alert("silahkan isi jawaban dulu")
+                        init++
+                          if (init === 1) {
+                              botDelay({ nama: jawaban.value })
+                                } else if (init === 2) {
+                                      botDelay({ beneran: jawaban.value })
+                                        } else if (init === 3) {
+                                              botDelay({ omong: jawaban.value })
+                                                }  else if (init === 4) {
+                                                        finishing()
+                                                          } else {
+                                                                botEnd()
+                                                                  }
+                                                                  }
+
+                                                                  function botDelay(jawabanUser) {
+                                                                      container[0].style.filter = "blur(8px)"
+                                                                        loaders.style.display = "block"
+                                                                          setTimeout(() => {
+                                                                              pertanyaan.innerHTML = botSay(jawabanUser)[init]
+                                                                                loaders.style.display = "none"
+                                                                                  container[0].style.filter = "none"
+                                                                                    }, [1000])
+                                                                                      jawaban.value = ""
+                                                                                      }
+
+                                                                                      function finishing() {
+                                                                                          pertanyaan.innerHTML =  'yey!! , yaudah mungkin cuma itu saja tpi itu sangat berarti buatku🥰. Thanks ya!'
+                                                                                            jawaban.value = "You're Welcome!😊"
+                                                                                            }
+
+                                                                                            function botEnd() {
+                                                                                                  window.location.reload()
+                                                                                                  }
+                                                                                            }
+                                                                                      }
+                                                                          })
+                                                                  }
+                                                          }
+                                                }
+                                        }
+                                }
+                          }
+                }
+}

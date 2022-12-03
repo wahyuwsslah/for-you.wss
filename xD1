@@ -1,0 +1,91 @@
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background color: red;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  background-image: url('V1.jpg');
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+flex-direction: column;
+justify-content: center;
+min-width: 325px;
+min-height: 100vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;.
+}
+
+.button {
+  border: none;
+  font-size: 30px;
+  padding: 20px;
+  margin-left: 10px;
+  height: 65px;
+  color: #eaeaea;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #333333;
+  transition: 0.5s all ease-in-out;
+}
+
+input {
+  border: none;
+  background-color: #eaeaea;
+  color: #2222222;
+  padding: 16px;
+  font-size: 24px;
+  background-image: url('V1.jpg');
+}
+
+.content {
+  margin: 8px;
+}
+
+#pertanyaan {
+  font-size: 1.6em;
+  font-weight: 400;
+  background: rgba(0%,0%,0%,0%);
+  color: green;
+  text-align: center;
+}
+#loaders {
+  display: none;
+  width: 85px;
+  height: 85px;
+  position: absolute;
+  background-color: red;
+  border-radius: 50%;
+  border-top: 15px solid orange;
+  top: 50%;
+  left: 50%;
+  z-index: 9;
+  animation: 1s spin infinite linear;
+  background: rgba(0%,0%,0%,0%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform:  rotate(360deg);
+  }
+}
